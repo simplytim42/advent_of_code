@@ -24,5 +24,18 @@ with file.open() as f:
 
         line = f.readline()
 
-max_key = max(results, key=results.get)
-print(f"{max_key} contains the highest amount with {results[max_key]}")
+first_key = max(results, key=results.get)
+print("Answer to Part 1:")
+print(f"{first_key} contains the highest amount with {results[first_key]}")
+print("\n")
+print("Answer to Part 2:")
+
+total_sum = results[first_key]
+results[first_key] = 0
+second_key = max(results, key=results.get)
+total_sum = total_sum + results[second_key]
+
+results[second_key] = 0
+third_key = max(results, key=results.get)
+total_sum = total_sum + results[third_key]
+print(f"top three total is {total_sum}")
