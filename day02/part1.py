@@ -84,4 +84,4 @@ with Path('./puzzleinput.txt').open() as f:
         total_score = total_score + round_score + you.value
         raw_data = f.readline()
 
-print(total_score)
+print("part 1 score: ", total_score)
