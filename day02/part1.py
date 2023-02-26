@@ -9,6 +9,11 @@ class Paper:
 class Scissors:
     value = 3
 
+# Scores
+LOSS = 0
+DRAW = 3
+WIN = 6
+
 def generate_match_objects(raw_data):
     opponent_letter = raw_data[0].strip().lower()
     you_letter = raw_data[1].strip().lower()
@@ -31,10 +36,6 @@ def generate_match_objects(raw_data):
 
     return you, opponent
 
-# Scores
-LOSS = 0
-DRAW = 3
-WIN = 6
 
 def calculate_round(you, opponent):
     you = you.__class__.__name__
@@ -60,17 +61,6 @@ def calculate_round(you, opponent):
     
     if you == 'Scissors' and opponent == 'Rock':
         return LOSS
-
-
-# opponent
-a = Rock()
-b = Paper()
-c = Scissors()
-
-# you
-x = Rock()
-y = Paper()
-z = Scissors()
 
 
 # calculate score
