@@ -1,5 +1,6 @@
 class BingoCard:
     WINNING_STATE = "*****"
+    is_complete = False
     
     def __init__(self):
         self.rows = []
@@ -19,11 +20,13 @@ class BingoCard:
         # check rows first
         for row in self.rows:
             if ''.join(row) == self.WINNING_STATE:
+                self.is_complete = True
                 return True
         
         # check columns
         for i in range(5):
             if "".join([row[i] for row in self.rows]) == self.WINNING_STATE:
+                self.is_complete = True
                 return True
             
         return False
